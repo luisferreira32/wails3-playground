@@ -7,7 +7,6 @@ import (
 	"time"
 
 	"github.com/wailsapp/wails/v3/pkg/application"
-	"github.com/wailsapp/wails/v3/pkg/w32"
 )
 
 // Wails uses Go's `embed` package to embed the frontend files into the binary.
@@ -40,24 +39,7 @@ func main() {
 		},
 	})
 
-	app.NewWebviewWindowWithOptions(application.WebviewWindowOptions{
-		Title: "border-window",
-		Mac: application.MacWindow{
-			InvisibleTitleBarHeight: 50,
-			Backdrop:                application.MacBackdropTranslucent,
-			TitleBar:                application.MacTitleBarHiddenInset,
-		},
-		BackgroundType: application.BackgroundTypeTransparent,
-		Frameless:      true,
-		StartState:     application.WindowStateFullscreen,
-		AlwaysOnTop:    true,
-
-		Windows: application.WindowsWindow{
-			DisableFramelessWindowDecorations: true,
-			ExStyle:                           w32.WS_EX_TOPMOST | w32.WS_EX_LAYERED | w32.WS_EX_TRANSPARENT,
-		},
-		URL: "/borderpage.html",
-	})
+	app.NewWebviewWindowWithOptions(getBoderWindowOptions())
 
 	app.NewWebviewWindowWithOptions(application.WebviewWindowOptions{
 		Title: "clock-window",
