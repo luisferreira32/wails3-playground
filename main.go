@@ -39,7 +39,7 @@ func main() {
 		},
 	})
 
-	app.NewWebviewWindowWithOptions(getBoderWindowOptions())
+	createBorderWindow(app)
 
 	app.NewWebviewWindowWithOptions(application.WebviewWindowOptions{
 		Title: "clock-window",

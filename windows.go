@@ -7,8 +7,8 @@ import (
 	"github.com/wailsapp/wails/v3/pkg/w32"
 )
 
-func getBoderWindowOptions() application.WebviewWindowOptions {
-	return application.WebviewWindowOptions{
+func createBorderWindow(app *application.App) *application.WebviewWindow {
+	borderWindow := app.NewWebviewWindowWithOptions(application.WebviewWindowOptions{
 		Title:          "border-window",
 		BackgroundType: application.BackgroundTypeTransparent,
 		Frameless:      true,
@@ -19,5 +19,7 @@ func getBoderWindowOptions() application.WebviewWindowOptions {
 			ExStyle:                           w32.WS_EX_TOPMOST | w32.WS_EX_LAYERED | w32.WS_EX_TRANSPARENT,
 		},
 		URL: "/borderpage.html",
-	}
+	})
+
+	return borderWindow
 }
