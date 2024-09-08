@@ -1,0 +1,15 @@
+# ide
+.vscode
+
+# build
+bin/
+.task/
+build/bin
+node_modules
+frontend/dist
+frontend/wailsjs
+*.syso
+
+# misc
+tmp/
+*.db
