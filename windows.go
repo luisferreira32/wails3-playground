@@ -9,17 +9,11 @@ import (
 
 func getBoderWindowOptions() application.WebviewWindowOptions {
 	return application.WebviewWindowOptions{
-		Title: "border-window",
-		Mac: application.MacWindow{
-			InvisibleTitleBarHeight: 50,
-			Backdrop:                application.MacBackdropTranslucent,
-			TitleBar:                application.MacTitleBarHiddenInset,
-		},
+		Title:          "border-window",
 		BackgroundType: application.BackgroundTypeTransparent,
 		Frameless:      true,
 		StartState:     application.WindowStateFullscreen,
 		AlwaysOnTop:    true,
-
 		Windows: application.WindowsWindow{
 			DisableFramelessWindowDecorations: true,
 			ExStyle:                           w32.WS_EX_TOPMOST | w32.WS_EX_LAYERED | w32.WS_EX_TRANSPARENT,

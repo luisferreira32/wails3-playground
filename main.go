@@ -45,8 +45,9 @@ func main() {
 		Title: "clock-window",
 		Mac: application.MacWindow{
 			InvisibleTitleBarHeight: 50,
-			Backdrop:                application.MacBackdropTranslucent,
-			TitleBar:                application.MacTitleBarHiddenInset,
+			Backdrop:                application.MacBackdropTransparent,
+			TitleBar:                application.MacTitleBarHidden,
+			DisableShadow:           true,
 		},
 		BackgroundType: application.BackgroundTypeTransparent,
 		Frameless:      true,
